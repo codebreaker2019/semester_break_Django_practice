@@ -1,10 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="{% static '/css/form_style.css' %}">
+
+    <title>html form</title>
 </head>
 <body>
+<form class= "box"  action="" method="post">
+    <lable for="test_field">user name</lable>
+    <input type="text" name="test_field" value="" >
 
+    <br>
+    {{key}}
+
+
+</form>
 </body>
 </html>

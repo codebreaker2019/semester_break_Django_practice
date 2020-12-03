@@ -11,3 +11,8 @@ def index(request):
 def contact(request):
     diction = {'key_2': 'I am from views'}
     return render(request, 'First_app/contact.html', context=diction)
+
+
+def form(request):
+    diction={'key':'i am from html page'}
+    return render(request,'First_app/form.html',context=diction)

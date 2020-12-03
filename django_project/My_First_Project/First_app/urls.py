@@ -5,6 +5,7 @@ from First_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('contact/',views.contact,name='contact')
+    path('contact/', views.contact, name='contact'),
+    path('form/', views.form, name='form')
 
 ]
