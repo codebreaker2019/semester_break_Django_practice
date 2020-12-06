@@ -8,14 +8,19 @@
     <title>html form</title>
 </head>
 <body>
-<form class= "box"  action="" method="post">
-    <lable for="test_field">user name</lable>
-    <input type="text" name="test_field" value="" >
 
-    <br>
-    {{key}}
-
-
+<br>
+<br><br>
+<form action="",method="post">
+    {{key_form.as_p}}
+    {% csrf_token %}
+    <input type="submit" , value="submit" , name="submit">
 </form>
+<hr>
+    {% if form_submitted %}
+       <p>Name: {{user_name}} </p>
+       <p>Date of Birth date :{{user_birthday}}</p>
+       <p>Email :{{user_email}} </p>
+    {% endif %}
 </body>
 </html>
