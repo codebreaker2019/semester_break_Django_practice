@@ -15,16 +15,17 @@ def contact(request):
 
 
 def form(request):
-    new_form = forms.user_form()
-    diction = {'key':'i am from html page','key_form': new_form}
-    if request.method == 'post':
-        new_form = forms.user_form(request.post)
+    new_form = forms.UserForm()
+    #form submit holo kina dekhar code
+    diction = {'key': 'i am a form  creating by django', 'key_form': new_form}
+    if request.method == 'POST':
+        new_form = forms.UserForm(request.POST)
+
         if new_form.is_valid():
-            user_name = new_form.cleaned_data['user_name']
-            user_birthdate = new_form.cleaned_data['user_birthdate']
-            user_email = new_form.cleaned_data['user_email']
-            diction.update({'user_name':user_name})
-            diction.update({'user_email':user_email})
-            diction.update({'user_birthdate':user_birthdate})
-            diction.update({'form_submitted': "Yes"})
+            diction.update({'boolean_field':new_form.cleaned_data['boolean_field']})
+
+            diction.update({'form_submit':"Yes"})
+
+
+
     return render(request,'First_app/form.html',context=diction)
